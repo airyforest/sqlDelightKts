@@ -1,0 +1,29 @@
+-- https://kotlinlang.org/docs/mobile/configure-sqldelight-for-data-storage.html
+
+CREATE TABLE Language (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+deleteAllLanguages:
+DELETE FROM Language;
+
+deleteLanguageById:
+DELETE FROM Language
+WHERE id = ?;
+
+insertLanguage:
+INSERT INTO Language(id, name)
+VALUES(?, ?);
+
+updateLanguageName:
+UPDATE Language
+SET name = ?
+WHERE id = ?;
+
+selectAllLanguages:
+SELECT * FROM Language;
+
+selectLanguageById:
+SELECT * FROM Language
+WHERE id = ?;
